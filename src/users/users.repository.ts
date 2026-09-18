@@ -9,6 +9,9 @@ const publicUserSelect = {
   name: true,
   role: true,
   isActive: true,
+  phone: true,
+  birthDate: true,
+  preferredBarber: true,
   createdAt: true,
   updatedAt: true,
 };
@@ -50,6 +53,9 @@ export class UsersRepository {
     name: string;
     passwordHash: string;
     role?: 'ADMIN' | 'USER' | 'SUPERVISOR';
+    phone: string;
+    birthDate: string;
+    preferredBarber?: string;
   }) {
     return this.prisma.user.create({
       data,
@@ -67,6 +73,9 @@ export class UsersRepository {
       passwordHash: string;
       role: 'ADMIN' | 'USER' | 'SUPERVISOR';
       isActive: boolean;
+      phone: string;
+      birthDate: string;
+      preferredBarber?: string;
     }>,
   ) {
     return this.prisma.user.update({

@@ -54,6 +54,9 @@ export class UsersService {
       name: dto.name,
       passwordHash,
       role: dto.role,
+      phone: dto.phone,
+      birthDate: dto.birthDate,
+      preferredBarber: dto.preferredBarber,
     });
   }
 

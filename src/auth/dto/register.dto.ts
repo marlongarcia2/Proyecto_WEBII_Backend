@@ -1,4 +1,4 @@
-import { IsEmail, IsString, MinLength } from 'class-validator';
+import { IsDateString, IsEmail, IsOptional, IsString, MinLength } from 'class-validator';
 
 // DTO para POST /auth/register.
 // Si quieres pedir más datos al registrarse, agrégalos aquí y en AuthService.register().
@@ -13,4 +13,15 @@ export class RegisterDto {
   @IsString()
   @MinLength(8)
   password!: string;
+
+  // Datos adicionales para el contexto de la barbería.
+  @IsString()
+  phone!: string;
+
+  @IsDateString()
+  birthDate!: string;
+
+  @IsOptional()
+  @IsString()
+  preferredBarber?: string;
 }

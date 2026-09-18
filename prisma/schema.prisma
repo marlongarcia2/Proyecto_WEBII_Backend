@@ -36,6 +36,12 @@ model User {
   // Permite desactivar usuarios sin borrarlos físicamente.
   isActive      Boolean        @default(true)
 
+ 
+  // Datos adicionales para el contexto de la barbería.
+  phone            String?
+  birthDate        DateTime?
+  preferredBarber  String? 
+
   // Relación: un usuario puede tener muchos refresh tokens.
   refreshTokens RefreshToken[]
 

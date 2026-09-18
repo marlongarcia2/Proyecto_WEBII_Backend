@@ -31,6 +31,9 @@ export class AuthService {
       email: dto.email,
       name: dto.name,
       password: dto.password,
+      phone: dto.phone,
+      birthDate: dto.birthDate,
+      preferredBarber: dto.preferredBarber,
     });
 
     return this.login({

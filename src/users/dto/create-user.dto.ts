@@ -1,4 +1,4 @@
-import { IsEmail, IsIn, IsOptional, IsString, MinLength } from 'class-validator';
+import { IsDateString, IsEmail, IsIn, IsOptional, IsString, MinLength } from 'class-validator';
 
 // Lista de roles permitidos desde la API.
 // Puedes agregar más roles aquí, pero también debes agregarlos en el enum Role de Prisma.
@@ -26,4 +26,15 @@ export class CreateUserDto {
   @IsOptional()
   @IsIn(USER_ROLES)
   role?: UserRoleDto;
+
+  // Datos adicionales para el contexto de la barbería.
+  @IsString()
+  phone!: string;
+
+  @IsDateString()
+  birthDate!: string;
+
+  @IsOptional()
+  @IsString()
+  preferredBarber?: string;
 }
